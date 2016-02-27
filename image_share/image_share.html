@@ -1,0 +1,29 @@
+<head>
+    <title>image_share</title>
+</head>
+
+<body>
+    <h1>Welcome to Meteor!</h1>
+    <div class="container">
+        {{> images}}
+    </div>
+</body>
+
+<template name="images">
+    <div class="row">
+        {{#each images}}
+        <div class="col-xs-12 col-md-3">
+            <div class="thumbnail">
+                <img class="js-image" src="{{img_src}}" alt="{{img_alt}}" width="230px" height="230px">
+                <!-- js to make it clear that the class is no related to css but to js events-->
+                <div class="caption">
+                    <h3>Thumbnail label</h3>
+                    <p>description of the image</p>
+                </div>
+            </div>
+        </div>
+        <!-- end of col -->
+        {{/each}}
+    </div>
+    <!-- /row -->
+</template>
