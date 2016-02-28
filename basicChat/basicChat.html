@@ -1,0 +1,29 @@
+<head>
+    <title>basicChat</title>
+</head>
+
+<body>
+    <center>
+        <h1>Welcome to my basic chat!</h1> {{> formSendMessage}}
+    </center>
+    <br/> {{> messages}}
+</body>
+
+
+
+
+<template name="formSendMessage">
+    <form name="formSendMessage">
+        <input type="text" name="message" placeholder="Your message" class="sendMessage" />
+    </form>
+</template>
+
+
+<template name="messages">
+    {{#each messages}}
+    <div class="messageContainer">
+        <p>message by: </p>
+        <p>{{message}}</p>
+    </div>
+    {{/each}}
+</template>
