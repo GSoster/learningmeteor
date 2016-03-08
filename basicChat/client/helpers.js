@@ -5,7 +5,11 @@
 
    Template.messages.helpers({
        messages: function () {
-           return Messages.find();
+           return Messages.find({}, {
+               sort: {
+                   createdOn: -1
+               }
+           });
        },
        getUser: function (userId) {
            var user = Meteor.users.findOne({
