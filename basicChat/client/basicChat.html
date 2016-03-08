@@ -3,6 +3,7 @@
 </head>
 
 <body>
+    {{> navbar}}
     <center>
         <h1>Welcome to my basic chat!</h1> {{> formSendMessage}}
     </center>
@@ -26,4 +27,8 @@
         <p>{{message}}</p>
     </div>
     {{/each}}
+</template>
+
+<template name="navbar">
+    {{> loginButtons}}
 </template>
