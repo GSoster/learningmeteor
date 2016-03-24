@@ -5,9 +5,15 @@
 <body>
     <h1>Welcome to CircleText!</h1>
 
+    {{> date_display}}
+    
     {{> editor}}
 </body>
 
 <template name="editor">
+{{> sharejsCM docid=docid id="editor"}}
+</template>
 
+<template name="date_display">
+    {{current_date}}
 </template>
