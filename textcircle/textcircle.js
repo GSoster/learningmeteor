@@ -22,7 +22,8 @@ if (Meteor.isClient) {
         config: function () {
             return function (editor) {
                 editor.on('change', function (cm_editor, info) {
-                    console.log(cm_editor.getValue());
+                    editor.setOption("lineNumbers", true);
+                    editor.setOption("theme", 'the-matrix');
                     /*iframe has an entire html document inside it*/
                     /*we are getting it and additing what is in the editor*/
                     $('#viewer_ifrrame').contents().find("html").html(cm_editor.getValue());
