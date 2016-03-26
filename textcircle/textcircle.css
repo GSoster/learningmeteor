@@ -7,3 +7,10 @@ body {
 .top-margin {
     margin-top: 150px;
 }
+
+
+/*accounts*/
+
+.accounts-dialog {
+    background-color: blue;
+}

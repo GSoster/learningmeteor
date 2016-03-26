@@ -5,7 +5,10 @@
 <body>
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">CircleText</a> {{> date_display}}
+            <a class="navbar-brand" href="#">CircleText</a>
+            <p class="navbar-text navbar-right">
+                {{> loginButtons align=right}}</p>
+
         </div>
         <!-- /navcontainer-->
     </nav>
@@ -39,6 +42,6 @@
 
 <template name="viewer">
     <iframe id="viewer_ifrrame">
-        
+
     </iframe>
 </template>
