@@ -3,17 +3,42 @@
 </head>
 
 <body>
-    <h1>Welcome to CircleText!</h1>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">CircleText</a> {{> date_display}}
+        </div>
+        <!-- /navcontainer-->
+    </nav>
 
-    {{> date_display}}
-    
-    {{> editor}}
+    <div class="container top-margin">
+        <div class="row">
+            <div class="col-md-6">
+                {{> editor}}
+            </div>
+            <div class="col-md-6">
+                {{> viewer}}
+            </div>
+        </div>
+
+    </div>
+
 </body>
 
 <template name="editor">
-{{> sharejsCM docid=docid id="editor"}}
+    {{> sharejsCM docid=docid onRender=config id="editor"}}
+    <!-- docid and config are helpers-->
 </template>
 
 <template name="date_display">
     {{current_date}}
+</template>
+
+
+
+
+
+<template name="viewer">
+    <iframe id="viewer_ifrrame">
+        
+    </iframe>
 </template>
