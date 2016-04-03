@@ -64,6 +64,16 @@ if (Meteor.isClient) {
 
     });
 
+    /////
+    // EVENTS
+    /////
+    Template.navbar.events({
+        'click .js-add-doc': function (event) {
+            event.preventDefault();
+            console.log('added doc');
+        }
+    });
+
 } // /Meteor.isClient
 
 if (Meteor.isServer) {
