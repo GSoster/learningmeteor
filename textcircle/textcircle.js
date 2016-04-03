@@ -76,6 +76,20 @@ if (Meteor.isClient) {
         }
     });
 
+    Template.editableText.helpers({
+        userCanEdit: function (doc, Collection) {
+            //can edit if the current doc is owned by me
+            doc = Documents.findOne({
+                _id: Session.get("docid"),
+                owner: Meteor.userId()
+            });
+            if (doc) {
+                return true;
+            }
+            return false;
+        }
+    });
+
 
     /////
     // EVENTS
