@@ -33,12 +33,8 @@ Template.body.events({
     const target = event.target;
     const text = target.text.value;
 
-    Tasks.insert({
-      text,
-      createdAt: new Date(),
-      owner: Meteor.userId(),
-      username: Meteor.user().username,
-    });
+    // Insert a task into the collection
+    Meteor.call('tasks.insert', text);
     target.text.value = '';
   },
   'change .hide-completed input' (event, instance) {
