@@ -12,7 +12,7 @@ Template.body.onCreated(function bodyOnCreated () {
 });
 
 Template.body.helpers({
-  tasks(){
+  tasks () {
     const instance = Template.instance();
     if (instance.state.get('hideCompleted')) {
       // If hide completed is checked, filter tasks
@@ -20,7 +20,10 @@ Template.body.helpers({
     }
     // Otherwise, return all of the tasks
     return Tasks.find({}, { sort: { createdAt: -1 } });
-  }
+  },
+  incompleteCount () {
+    return Tasks.find({checked: {$ne: true}}).count();
+  },
 });
 
 Template.body.events({
