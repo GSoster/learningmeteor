@@ -36,6 +36,8 @@ Template.body.events({
     Tasks.insert({
       text,
       createdAt: new Date(),
+      owner: Meteor.userId(),
+      username: Meteor.user().username,
     });
     target.text.value = '';
   },
